@@ -1,0 +1,26 @@
+// Fonts
+$police-titre-logo : "Shrikhand";
+$police-texte : "Roboto";
+
+// Colors
+$couleur-primaire:#9356dc;
+$couleur-secondaire:#ff79da;
+$couleur-tertiaire :#99e2d0;
+$couleur-fond:#F6F6F6;
+$couleur-pied: #000000;
+$couleur-ombre:#CFCFCF;
+$couleur-primaire-claire:lighten($couleur-primaire,2%);
+$couleur-secondaire-claire:lighten($couleur-secondaire,2%);
+$couleur-tertiare-claire:lighten($couleur-tertiaire,2%);
+
+
+// Default config
+
+*{
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 0;
+}
