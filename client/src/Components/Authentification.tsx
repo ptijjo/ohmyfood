@@ -25,9 +25,9 @@ const Authentification = () => {
 
     return (
         <div className='authentification'>
-            <div>
-                <span className={((connection) && (enregistrement === false) ? "" : "")} onClick={HandleConnection}>Connection</span>
-                <span className={((!connection) && (enregistrement === true) ? "" : "")} onClick={HandleEnregistrement}>Enregistrement</span>
+            <div className='onglets-contents'>
+                <span className={((connection) && (!enregistrement) ? "onglet" : "noChoice")} onClick={HandleConnection}>Connection</span>
+                <span className={((!connection) && (enregistrement === true) ? "onglet" : "noChoice")} onClick={HandleEnregistrement}>Enregistrement</span>
             </div>
             {connection && <SignIn />}
             {enregistrement && <SignUp />}

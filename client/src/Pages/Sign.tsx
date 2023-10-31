@@ -3,7 +3,7 @@ import Authentification from '../Components/Authentification';
 
 const Sign = () => {
     return (
-        <div>
+        <div className='sign'>
             <Authentification />
         </div>
     )

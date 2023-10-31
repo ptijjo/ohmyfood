@@ -1,7 +1,13 @@
 @import "./settings";
 
 // Components
-
+@import "./components/signIn.scss";
+@import "./components/authentification.scss";
+@import "./components/header.scss";
+@import "./components/footer.scss";
+@import "./components/loader.scss";
 
 
 // Pages
+@import "./pages/sign.scss";
+@import "./pages/home.scss";

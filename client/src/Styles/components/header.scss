@@ -1,0 +1,55 @@
+.header{
+    width: 100vw;
+    aspect-ratio: 6/1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-betweens;
+    align-items: center;
+    padding: 10px;
+    background-color: $couleur-fond;
+
+    position: absolute;
+    top: 0;
+
+
+    .logo-content{
+        display: flex;
+        justify-content:left;
+        align-items: center;
+        margin: 0;
+
+        .logo{
+            width: 40%;
+            object-fit: cover;
+            object-position: center center;
+            margin: 0;
+        }
+    }
+
+    .user-content{
+        margin: 0;
+        //width: 50%;
+        display: flex;
+        align-items:center;
+        justify-content:right;
+        text-align: right;
+
+        .user-avatar{
+           
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .avatar{
+                object-fit: cover;
+                object-position: center center;
+                width: 10vw;
+               aspect-ratio: 1/1;
+            }
+        }
+
+
+    }
+}

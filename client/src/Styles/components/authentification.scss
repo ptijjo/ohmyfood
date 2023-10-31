@@ -1,0 +1,39 @@
+.authentification{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    .onglets-contents{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .onglet,.noChoice{
+            border: none;
+            width: 50%;
+            aspect-ratio: 5/1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+            
+        }
+
+        .onglet{
+            background-color: $couleur-secondaire-claire;
+            color: $couleur-fond;
+            
+        }
+
+        .noChoice{
+            background-color: $couleur-fond;
+        }
+    }
+}

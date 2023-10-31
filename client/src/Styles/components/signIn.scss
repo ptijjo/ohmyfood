@@ -1,0 +1,38 @@
+.formSign{
+
+    width: 100%;
+    background-color: $couleur-fond;
+
+    .input-form{
+        width: 90%;
+        aspect-ratio: 6/1;
+        text-align: center;
+        border-radius: 5px;
+        margin: 10px 0 ;
+        border: none;
+    }
+
+    .erreur-form{
+        color: red;
+    }
+
+    .btn-form{
+        width: 70%;
+        aspect-ratio: 5/1;
+        border-radius: 20px;
+        background-image: linear-gradient($couleur-secondaire 0%, $couleur-primaire 100%);
+        border: none;
+        margin: 10px 0 20px 0;
+        color: $couleur-fond;
+        font-size:large;
+
+        &:hover{
+
+            background-image: linear-gradient($couleur-secondaire-claire 0%, $couleur-primaire-claire 100%);
+            font-size: larger;
+        }
+    }
+}
+
+
+
