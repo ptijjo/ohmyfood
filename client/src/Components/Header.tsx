@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom"
 import Logo from "../assets/img/logo/ohmyfood.png";
 
+
+// On crée une props afin d'aficher l'image et le nom de la personne connectée
 interface Props {
     userAvatar: string,
     userName: string
@@ -10,6 +12,7 @@ const Header = (props: Props) => {
 
     const navigate = useNavigate();
 
+    //On crée la fonction retour a la page depart lorsqu'on clique sur le logo
     const homeBack = () => {
 
         navigate("/home");

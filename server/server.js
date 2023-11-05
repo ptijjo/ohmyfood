@@ -6,6 +6,7 @@ const connection = require("./middleware/bdd_connection");
 const cors = require("cors");
 const morgan = require("morgan");
 const userRouter = require("./routers/user");
+const restaurantRouter = require("./routers/restaurant");
 const path = require("path");
 
 connection(mongoose);
@@ -18,6 +19,7 @@ app
 
 app
     .use(userRouter)
+    .use(restaurantRouter)
 
 
 

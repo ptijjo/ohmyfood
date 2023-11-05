@@ -11,12 +11,14 @@ module.exports = async (req, res, next) => {
         const user_picture = await decodedToken.user_picture;
         const user_email = await decodedToken.user_email;
         const user = await decodedToken.user;
+        const user_role = await decodedToken.user_role;
 
         req.auth = {
             user_id: user_id,
             user_picture: user_picture,
             user_email: user_email,
-            user: user
+            user: user,
+            user_role: user_role,
         };
 
         next();

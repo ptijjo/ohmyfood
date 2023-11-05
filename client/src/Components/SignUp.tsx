@@ -15,14 +15,20 @@ const SignUp = () => {
 
     const navigate = useNavigate();
 
+    //Fonction  asynchrone qui soumet notre formulaire 
     const submit = async (data: FieldValues) => {
 
         try {
+
+            // on attend la réponse de notre requete
             const response = await axios.post(Url.register, data);
 
+            //si le status de la reponse est "Succes 👍" on affiche une alerte de bienvenue a l'utilisateur enregistrer ensuite on retourne a la page d'accueil
             if (response.data.status === "Succes 👍") return navigate("/")
 
         } catch (error) {
+
+            // si il y'a une erreur on l'affiche lemessage dans un toast pendant 5s
             const erreur = error.response.data.error;
 
             toast.error(`${erreur}`, {
@@ -33,7 +39,7 @@ const SignUp = () => {
 
     }
 
-
+    // Regex de validation du mot de passe contenant au moins 8 caractères, des lettres majuscules, des lettres minuscules, des chiffres et des caractères spéciaux
     const regPassword: RegExp = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
     return (

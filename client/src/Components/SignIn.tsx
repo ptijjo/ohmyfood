@@ -18,12 +18,14 @@ const SignIn = () => {
 
     const navigate = useNavigate();
 
+    //Fonction  asynchrone pour soumettre le formulaire
     const submit = async (data: FieldValues) => {
         try {
 
+            // On va attendre la réponse de notre requete
             const response = await axios.post(Url.connection, data);
 
-
+            // si le status de la réponse est "Succes👍" on enregistre le token dans le local storage et on retourne sur la page d'accueil
             if (response.data.status === "Succes 👍") {
 
                 localStorage.setItem("token", response.data.token);
@@ -31,6 +33,8 @@ const SignIn = () => {
             }
 
         } catch (error) {
+
+            // Si il y'a une erreur on affiche le message dans un toast pendant 5s
             const erreur = error.response.data.error;
 
             toast.error(`${erreur}`, {
@@ -40,6 +44,7 @@ const SignIn = () => {
         }
     }
 
+    //Regex de validation de l'adresse email
     const regEmail: RegExp = /^[\w\.-]+@[\w\.-]+\.\w+$/;
 
 

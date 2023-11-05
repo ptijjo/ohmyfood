@@ -7,6 +7,7 @@ const Authentification = () => {
     const [connection, setConnection] = useState(true);
     const [enregistrement, setEnregistrement] = useState(false);
 
+    //La fonction vérifie si on a cliqué sur l'onglet connection
     const HandleConnection = () => {
         if (!connection) {
             setConnection(true);
@@ -15,6 +16,7 @@ const Authentification = () => {
 
     };
 
+    //La fonction vérifie si on a cliqué sur l'onglet enregtistrement
     const HandleEnregistrement = () => {
         if (!enregistrement) {
             setConnection(false);

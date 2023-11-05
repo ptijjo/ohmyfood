@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const validator = require("validator");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
-const fs = require("fs");
+
 
 
 
@@ -88,6 +88,7 @@ exports.connection = async (req, res) => {
                 user_lastName: user.lastName,
                 user_picture: user.picture,
                 user: `${user.firstName} ${user.lastName}`,
+                user_role: user.role,
             },
                 process.env.SECRET_JWT,
                 { expiresIn: process.env.EXPIRE_TIME_JWT })
@@ -220,6 +221,7 @@ exports.who = async (req, res) => {
         const user_picture = await decodedToken.user_picture;
         const user_email = await decodedToken.user_email;
         const user = await decodedToken.user;
+        const user_role = await decodedToken.user_role;
 
         res.status(200).json({
             status: "succes 👍",
@@ -227,6 +229,7 @@ exports.who = async (req, res) => {
             user,
             user_email,
             user_picture,
+            user_role,
 
         })
     } catch (error) {
