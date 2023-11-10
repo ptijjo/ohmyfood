@@ -25,7 +25,7 @@ const Menu = () => {
 
     return (
         <div className="menu">
-            <h2>Fonctionnement</h2>
+            <h2 className="titre-menu">Fonctionnement</h2>
             <BoutonMenu numero={bouton1.numero} titre={bouton1.titre} icone={bouton1.icone} />
             <BoutonMenu numero={bouton2.numero} titre={bouton2.titre} icone={bouton2.icone} />
             <BoutonMenu numero={bouton3.numero} titre={bouton3.titre} icone={bouton3.icone} />

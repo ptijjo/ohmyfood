@@ -32,6 +32,31 @@
             font-size: larger;
         }
     }
+
+    .form-radio{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding: 0 20px;
+
+        .radio{
+            margin: 0;
+        }
+
+        .label-radio1{
+            width: 30%;
+            margin: 0;
+            position: relative;
+            left: -8px;
+        }
+
+        .label-radio2{
+            width: 40%;
+            margin: 0;
+            position: relative;
+            left: -18px;
+        }
+    }
 }
 
 

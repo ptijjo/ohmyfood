@@ -29,7 +29,7 @@ exports.newRestaurant = async (req, res) => {
     try {
         const user = await User.findById(req.auth.user_id)
 
-        if (user.role !== "pro") {
+        if (user.role !== "professionnel") {
             return res.status(400).json({
                 status: "fail 🔥",
                 error: "Opération non autorisé !"
@@ -41,6 +41,12 @@ exports.newRestaurant = async (req, res) => {
         });
 
         restaurant.save();
+
+        res.status(201).json({
+            status: "sucess 👍",
+            data: restaurant,
+            createdAt: new Date().toISOString
+        });
 
 
     } catch (error) {

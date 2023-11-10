@@ -1,0 +1,30 @@
+.presentation{
+    width: 100vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: lighten($couleur-ombre,15%);
+
+    .titre{
+        width: 80%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .description{
+        margin: 10px 0;
+        width: 90%;
+        text-align: center;
+    }
+
+    .btn-explorer{
+        margin: 15px 0 ;
+        border: none;
+        width: 60%;
+        aspect-ratio: 6/1;
+        border-radius: 20px;
+        color: $couleur-fond;
+        background-image: linear-gradient($couleur-secondaire-claire,$couleur-primaire-claire);
+    }
+}

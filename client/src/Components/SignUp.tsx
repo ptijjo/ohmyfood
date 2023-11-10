@@ -11,6 +11,7 @@ const SignUp = () => {
         register,
         handleSubmit,
         formState: { errors },
+        reset,
     } = useForm();
 
     const navigate = useNavigate();
@@ -23,8 +24,13 @@ const SignUp = () => {
             // on attend la réponse de notre requete
             const response = await axios.post(Url.register, data);
 
-            //si le status de la reponse est "Succes 👍" on affiche une alerte de bienvenue a l'utilisateur enregistrer ensuite on retourne a la page d'accueil
-            if (response.data.status === "Succes 👍") return navigate("/")
+
+            toast.success(`${response.data.user}`, {
+                position: toast.POSITION.TOP_LEFT
+            });
+            reset();
+            navigate("/");
+
 
         } catch (error) {
 
@@ -63,6 +69,14 @@ const SignUp = () => {
             <input type='password' id="password" placeholder='Password...' autoComplete='off' className='input-form'{...register('password', { required: true, pattern: regPassword })} /><br />
             {errors.password && errors.password.type === "required" && <p className='erreur-form'>Veuillez entrer un mot de passe !"</p>}
             {errors.password && errors.password.type === "pattern" && <p className='erreur-form'>Mot de passe faible. Assurez-vous d'inclure au moins 8 caractères, des lettres majuscules, des lettres minuscules, des chiffres et des caractères spéciaux."</p>}
+
+            <div className='form-radio'>
+                <input type="radio" name="role" id="particulier" defaultChecked className='radio' value="particulier" {...register('role')} />
+                <label htmlFor="particulier" className='label-radio1'> Particulier</label>
+                <input type="radio" name="role" id="professionnel" className='radio' value="professionnel" {...register('role')} /><br />
+                <label htmlFor="professionnel" className='label-radio2'>Professionnel</label>
+            </div>
+
 
 
             <input type="submit" value="Enregistrer" className='btn-form' />
